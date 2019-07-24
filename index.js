@@ -18,13 +18,13 @@ app.get('/contacts', function (req, res) {
   res.json(contacts)
 })
 app.get('/products', function (req, res) {
-  res.send('Hello world')
+  res.json(products)
 })
 app.get('/vehicles', function (req, res) {
-  res.send('Hello world')
+  res.json(vehicles)
 })
 app.get('/comments', function (req, res) {
-  res.send('Hello world')
+  res.json(comments)
 })
 
 //put
