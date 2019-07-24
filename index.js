@@ -25,6 +25,12 @@ app.get('/comments/:commentId',function (req,res) {
   res.json(id)
 })
 
+app.post('/comments',(req,res)=>{
+  let comment = req.body;
+  comments.push(comment);
+  res.json(comment);
+})
+
 //contacts
 app.get('/contacts', function (req, res) {
   res.json(contacts)
@@ -35,15 +41,27 @@ app.get('/contacts/:contactId', (req,res) =>{
   res.json(id)
 })
 
+app.post('/contacts',(req,res)=>{
+  let contact = req.body;
+  contacts.push(contact);
+  res.json(contact);
+})
+
 //products
 
-app.get('/products', function (req, res) {
+app.get('/products', (req, res) => {
   res.json(products)
 })
 
 app.get('/products/:productId', (req,res) =>{
   let id = products.filter(i => i._id == req.params.productId);
   res.json(id)
+})
+
+app.post('/products',(req,res)=>{
+  let product = req.body;
+  products.push(product);
+  res.json(product);
 })
 
 //vehicles
@@ -56,6 +74,11 @@ app.get('/vehicles/:vehiclesId', (req,res) =>{
   res.json(id)
 })
 
+app.post('/vehicles',(req,res)=>{
+  let vehicle = req.body;
+  vehicles.push(vehicle);
+  res.json(vehicle);
+})
 
 // server
 const thePort = 8000;
