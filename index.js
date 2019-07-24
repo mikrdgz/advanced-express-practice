@@ -11,34 +11,50 @@ app.use(express.static("public"));
 
 
 
-//get
+//rooty
 app.get('/', (req, res) => res.send('Hello World!'))
 
-app.get('/contacts', function (req, res) {
-  res.json(contacts)
-})
-app.get('/products', function (req, res) {
-  res.json(products)
-})
-app.get('/vehicles', function (req, res) {
-  res.json(vehicles)
-})
+//comments
+
 app.get('/comments', function (req, res) {
   res.json(comments)
 })
 
-//put
-
-app.put('/', function (req, res) {
-  res.send('Hello world')
+app.get('/comments/:commentId',function (req,res) {
+  let id = comments.filter(i => i._id == req.params.commentId);
+  res.json(id)
 })
 
-//post
-
-app.post('/', function (req, res) {
-  res.send('Hello world')
+//contacts
+app.get('/contacts', function (req, res) {
+  res.json(contacts)
 })
 
+app.get('/contacts/:contactId', (req,res) =>{
+  let id = contacts.filter(i => i._id == req.params.contactId);
+  res.json(id)
+})
+
+//products
+
+app.get('/products', function (req, res) {
+  res.json(products)
+})
+
+app.get('/products/:productId', (req,res) =>{
+  let id = products.filter(i => i._id == req.params.productId);
+  res.json(id)
+})
+
+//vehicles
+app.get('/vehicles', function (req, res) {
+  res.json(vehicles)
+})
+
+app.get('/vehicles/:vehiclesId', (req,res) =>{
+  let id = vehicles.filter(i => i._id == req.params.vehiclesId);
+  res.json(id)
+})
 
 
 // server
