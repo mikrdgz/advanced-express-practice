@@ -1,18 +1,13 @@
-let express = require("express");
+const express = require("express");
 let comments = require("./comments");
 let products = require("./products");
 let vehicles = require("./vehicles");
 let contacts  = require("./contacts");
-
 const bodyParser = require("body-parser");
 const app = express();
 app.use(bodyParser.json());
 app.use(express.static("public"));
 
-
-
-//rooty
-app.get('/', (req, res) => res.send('Hello World!'))
 
 //comments
 
@@ -65,20 +60,6 @@ app.post('/products',(req,res)=>{
 })
 
 //vehicles
-app.get('/vehicles', function (req, res) {
-  res.json(vehicles)
-})
-
-app.get('/vehicles/:vehiclesId', (req,res) =>{
-  let id = vehicles.filter(i => i._id == req.params.vehiclesId);
-  res.json(id)
-})
-
-app.post('/vehicles',(req,res)=>{
-  let vehicle = req.body;
-  vehicles.push(vehicle);
-  res.json(vehicle);
-})
 
 // server
 const thePort = 8000;
