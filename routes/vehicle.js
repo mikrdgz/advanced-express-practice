@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
+let vehicles = require("../vehicles");
 
-module.exports = router;
+
 
 router.get('/vehicles', function (req, res) {
     res.json(vehicles)
@@ -18,3 +19,4 @@ router.get('/vehicles', function (req, res) {
     res.json(vehicle);
   })
   
+  module.exports = router;
