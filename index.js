@@ -1,7 +1,7 @@
 const express = require("express");
 let productsRoutes = require("./routes/products");
 let vehicleRoutes = require("./routes/vehicle");
-let contactsRoutes = require("./routes/contacts");
+// let contactsRoutes = require("./routes/contacts");
 const bodyParser = require("body-parser");
 
 //express
@@ -16,7 +16,7 @@ const thePort = 8000;
 
 app.use(productsRoutes);
 app.use(vehicleRoutes);
-app.use(contactsRoutes);
+// app.use(contactsRoutes);
 
 app.listen(thePort, (err) => {
  if (err) {
