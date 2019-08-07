@@ -2,7 +2,7 @@ let products = require("../products");
 
 
 exports.list = (req,res) => {
-    return response.json(products);
+    return res.json(products);
 }
 
 exports.show = (req,res) => {

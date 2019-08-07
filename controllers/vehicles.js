@@ -2,7 +2,7 @@ let vehicles = require("../vehicles");
 
 
 exports.list = (req,res) => {
-    return response.json(vehicles);
+    return res.json(vehicles);
 }
 
 exports.show = (req,res) => {
