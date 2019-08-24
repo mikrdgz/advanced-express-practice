@@ -1,26 +1,38 @@
-let products = require("../products");
+let ProductModel = require('../models/product');
+let mongoose = require("mongoose")
 
 
-exports.list = (req,res) => {
-    return res.json(products);
-}
+//get all products
+
+exports.list = (req,res)=> {
+    ProductModel.find(function(err,prods){
+        if(err){
+            console.log(err)
+        }
+        return res.json(prods)
+    })
+}; 
 
 exports.show = (req,res) => {
-    let id = products.filter(i => i._id == req.params.productsId);
-res.json(id);
-}
+    ProductModel.findById(request.params.productId, function(err,products){
+if(err) return console.log(err);
+return response.json(products)
+    })
+};
+
 
 exports.create = (req,res) => {
-    let newProduct = req.body;
-    productss.push(newProduct);
-    res.json(newProduct);
-}
+    const newProduct = new ProductModel(request.body);
+    newProduct.save((err,prod)=>
+    response.json(prod)
+   )
+};
 
 exports.update = (req,res) => {
-    let id = products.filter(i => i._id == req.params.productsId);
-        product.make = body.make;
-        response.json(product);
-
+    ProductModel.findByIdAndUpdate(id,request.body, function(err,prod){
+        if(err) return console.log(err);
+        return response.json(products)
+        })
 }
 
 exports.remove = (req,res) => {
