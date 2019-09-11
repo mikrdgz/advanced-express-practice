@@ -12,22 +12,6 @@ const dbUrl =
 mongoose.connect(dbUrl, { useNewUrlParser: true });
 
 
-// newProduct.save(function (err, newProduct) {
-//   if (err) return console.error(err);
-// console.log(newProduct)});
-
-// Cat.find({age:12}, function(cats,err){
-//   if(err)return console.error(err);
-//   console.log(cats)
-// })
-
-// Cat.findByIdAndUpdate('5d5092905be20f4551a0d50e', {name: "banan"}, function (err, result){
-//   if (err){
-//   console.log(err);
-//   }
-//   console.log('Result' + result)
-// });
-
 
 //express
 const app = express();
